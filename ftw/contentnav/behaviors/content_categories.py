@@ -16,14 +16,16 @@ class IContentCategories(model.Schema):
         title=_(u'label_categories', default=u'Categories'),
         description=_(u'help_categories',
                       default=u'Category for contentlisting'),
-        value_type=schema.Choice(title=_(u"categories"),
-                                 vocabulary='ftw.contentnav.contentcategories'),
+        value_type=schema.Choice(
+            title=_(u"categories"),
+            vocabulary='ftw.contentnav.contentcategories'),
         required=False,
         missing_value=(),
     )
     directives.widget('content_categories', CheckBoxFieldWidget)
 
-    write_permission(new_content_categories='ftw.contentnav.content_categories_behavior.add_new_categories')
+    write_permission(
+        new_content_categories='ftw.contentnav.categories_behavior.add_new_categories')
     new_content_categories = schema.Tuple(
         title=_(u'label_new_categories', default=u'New categories'),
         description=_(u'help_new_categories',

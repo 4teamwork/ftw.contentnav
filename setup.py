@@ -22,7 +22,7 @@ setup(name='ftw.contentnav',
           Provides a content navigation behavior,
           which allows you to show sub content by category.''',
       long_description=open('README.rst').read() + '\n' +
-          open(os.path.join('docs', 'HISTORY.txt')).read(),
+                  open(os.path.join('docs', 'HISTORY.txt')).read(),
 
       # Get more strings from
       # http://www.python.org/pypi?%3Aaction=list_classifiers
