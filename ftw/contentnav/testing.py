@@ -5,6 +5,7 @@ from ftw.builder.testing import functional_session_factory
 from ftw.builder.testing import set_builder_session_factory
 from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
+from plone.app.testing import IntegrationTesting
 from plone.app.testing import login
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
@@ -56,6 +57,8 @@ registry.builder_registry.register('sample', SampleBuilder)
 
 
 FTW_CONTENTNAV_FIXTURE = FtwContentnavLayer()
+FTW_CONTENTNAV_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(FTW_CONTENTNAV_FIXTURE,), name="FtwSimplelayout:Integration")
 FTW_CONTENTNAV_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FTW_CONTENTNAV_FIXTURE,
            set_builder_session_factory(functional_session_factory)),

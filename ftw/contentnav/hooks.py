@@ -44,5 +44,6 @@ def remove_catalog_indexes(context):
     indexes = catalog.indexes()
 
     for name, meta_type in INDEXES:
+
         if name in indexes:
             catalog.delIndex(name)
