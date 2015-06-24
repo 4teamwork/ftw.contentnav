@@ -40,10 +40,20 @@ Installation
 Usage
 =====
 
-First steps
------------
+The contentnav listing viewlet is registered for all Dexterity-Types.
+It shows categorized subcontent, within the context
 
-If you assign one or more categories to a contenttype, it will be listet on its parent.
+The ftw.contentnav categorisation behavior extends your DX content by the functionality to add categories in the edit-view
+
+To activate the behavior on a contenttype do the following:
+
+Code example:
+
+::
+
+  <class class="dotted.name.to.my.class">
+    <implements interface="ftw.contentnav.interfaces.ICategorizable" />
+  </class>
 
 
 Development
