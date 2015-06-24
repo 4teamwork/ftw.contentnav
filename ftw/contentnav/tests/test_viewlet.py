@@ -1,7 +1,6 @@
 from ftw.builder import Builder
 from ftw.builder import create
 from ftw.contentnav.testing import FTW_CONTENTNAV_FUNCTIONAL_TESTING
-from ftw.testbrowser import browsing
 from plone.dexterity.fti import DexterityFTI
 from Products.Five.browser import BrowserView as View
 from unittest2 import TestCase
@@ -40,7 +39,7 @@ class TestContentNavViewlet(TestCase):
         name = 'ftw.contentnav.contentnavlisting'
         return [v for v in manager.viewlets if v.__name__ == name]
 
-    def test_viewlet_with_dx_content(self):
+    def test_viewlet_with_one_category(self):
         folder = create(Builder('sample'))
         content = create(Builder('sample')
                          .titled('Democontent')
@@ -54,6 +53,37 @@ class TestContentNavViewlet(TestCase):
             ('WITH unicode \xc3\xa4',
                 [('Democontent', content.absolute_url(), '')]),
             viewlet.get_content())
+
+    def test_viewlet_with_multiple_categories(self):
+        folder = create(Builder('sample'))
+        content = create(Builder('sample')
+                         .titled('Democontent')
+                         .within(folder)
+                         .having(content_categories=(
+                             u'WITH unicode \xe4', u'WITHOUT unicode')))
+
+        viewlet = self._get_viewlet(folder)[0]
+        self.assertTrue(viewlet.available())
+
+        self.assertIn(
+            ('WITH unicode \xc3\xa4',
+                [('Democontent', content.absolute_url(), '')]),
+            viewlet.get_content())
+
+        self.assertIn(
+            ('WITHOUT unicode',
+                [('Democontent', content.absolute_url(), '')]),
+            viewlet.get_content())
+
+    def test_viewlet_without_categories(self):
+        folder = create(Builder('sample'))
+        create(Builder('sample')
+               .titled('Democontent')
+               .within(folder)
+               .having(content_categories=(tuple())))
+
+        viewlet = self._get_viewlet(folder)[0]
+        self.assertIs(False, viewlet.available())
 
     def test_adding_new_category_using_the_new_categories_field(self):
         folder = create(Builder('sample'))
@@ -70,25 +100,3 @@ class TestContentNavViewlet(TestCase):
             ('WITH \xc3\xa4',
                 [('Democontent', content.absolute_url(), '')]),
             viewlet.get_content())
-
-    @browsing
-    def test_adding_new_categories_only_for_managers(self, browser):
-        folder = create(Builder('sample'))
-        user = create(Builder('user')
-                      .with_roles('Site Administrator', on=folder))
-
-        content = create(Builder('sample')
-                         .titled('Democontent')
-                         .within(folder))
-
-        browser.login(user.getId()).visit(content, view='@@edit')
-
-        selector = \
-            '#formfield-form-widgets-IContentCategories-new_content_categories'
-        self.assertFalse(browser.css(selector),
-                         'New categories field should no be visible.')
-
-        browser.login().visit(content, view='@@edit')
-        self.assertTrue(
-            browser.css(selector),
-            'New categories field should be visible.')

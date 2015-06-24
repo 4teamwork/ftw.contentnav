@@ -62,7 +62,7 @@ class ContentCategoriesStorage(object):
 
     @new_content_categories.setter
     def new_content_categories(self, value):
-        if value is None:
+        if not value:
             return ()
         else:
             categories = tuple(self.annoation_storage.content_categories)
