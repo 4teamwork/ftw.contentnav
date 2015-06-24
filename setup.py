@@ -9,6 +9,13 @@ tests_require = [
     'ftw.testing',
     'ftw.testbrowser',
     'plone.app.testing',
+
+    'plone.testing',
+    'Products.CMFPlone',
+    'Products.GenericSetup',
+    'unittest2',
+    'zope.configuration',
+    'plone.app.lockingbehavior',
     ]
 
 extras_require = {
@@ -49,6 +56,13 @@ setup(name='ftw.contentnav',
 
       install_requires=[
           'setuptools',
+          'ftw.profilehook',
+          'plone.behavior',
+          'plone.dexterity',
+          'plone.app.dexterity',
+          # 'plone.app.contenttypes<1.2b, >1.1b',
+          'plone.app.widgets',
+          'plone.directives.form',
           ],
 
       tests_require=tests_require,
