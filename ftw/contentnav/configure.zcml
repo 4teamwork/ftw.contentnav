@@ -21,7 +21,7 @@
 
 	<include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
 
- <!-- Register the installation GenericSetup extension profile -->
+    <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
         name="default"
         title="ftw.contentnav"
