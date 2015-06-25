@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<layers>
-    <layer name="ftw.contentnav-layer"
-           interface="ftw.contentnav.interfaces.IFtwContentNavLayer" />
-</layers>

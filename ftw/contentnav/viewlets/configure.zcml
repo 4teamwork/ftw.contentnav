@@ -9,7 +9,6 @@
         manager="plone.app.layout.viewlets.interfaces.IBelowContent"
         class=".contentnavlisting.ContentNavListingViewlet"
         permission="zope2.View"
-        layer="ftw.contentnav.interfaces.IFtwContentNavLayer"
         />
 
 </configure>
