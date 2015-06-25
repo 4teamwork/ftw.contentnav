@@ -35,20 +35,6 @@
         handler=".hooks.installed"
         />
 
-    <genericsetup:registerProfile
-        name="uninstall"
-        title="Uninstall ftw.contentnav"
-        directory="profiles/uninstall"
-        description="Deinstalls contentnav"
-        provides="Products.GenericSetup.interfaces.EXTENSION"
-        for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
-        />
-
-    <profilehook:hook
-        profile="ftw.contentnav:uninstall"
-        handler=".hooks.uninstalled"
-        />
-
 	 <!-- indexer -->
     <adapter name="get_content_categories" factory=".indexer.categories" />
 
