@@ -28,7 +28,7 @@ class TestContentCategoriesBehavior(TestCase):
         create(Builder('sample')
                .having(content_categories=(u'DEMO1', )))
 
-        self.assertTrue(catalog({'getContentCategories': 'DEMO1'})[0])
+        self.assertTrue(catalog({'get_content_categories': 'DEMO1'})[0])
 
     def test_category_index_umlauts(self):
         catalog = getToolByName(self.portal, 'portal_catalog')
@@ -36,7 +36,7 @@ class TestContentCategoriesBehavior(TestCase):
         create(Builder('sample')
                .having(content_categories=(u'WITH unicode \xe4', )))
 
-        unique_values = catalog.Indexes['getContentCategories'].uniqueValues()
+        unique_values = catalog.Indexes['get_content_categories'].uniqueValues()
         self.assertIn("WITH unicode \xc3\xa4", unique_values)
 
     @browsing

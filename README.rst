@@ -45,16 +45,13 @@ It shows categorized subcontent, within the context
 
 The ftw.contentnav categorisation behavior extends your DX content by the functionality to add categories in the edit-view
 
-To activate the behavior on a contenttype do the following:
+You can simply add the contentnav categorisation behavior to your content by adding the following line to FTI:
 
-Code example:
+.. code-block:: xml
 
-::
-
-  <class class="dotted.name.to.my.class">
-    <implements interface="ftw.contentnav.interfaces.ICategorizable" />
-  </class>
-
+    <property name="behaviors">
+        <element value="ftw.contentnav.behaviors.content_categories.IContentCategories" />
+    </property>
 
 Development
 ===========

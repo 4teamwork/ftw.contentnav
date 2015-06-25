@@ -50,15 +50,11 @@
         />
 
 	 <!-- indexer -->
-    <adapter name="getContentCategories" factory=".indexer.categories" />
+    <adapter name="get_content_categories" factory=".indexer.categories" />
 
 	<utility
 	  component=".vocabularies.contentcategories_vocabulary"
 	  name="ftw.contentnav.contentcategories"
 	/>
 
-<!-- 	<class class="plone.app.contenttypes.content.Folder">
-    	<implements interface="ftw.contentnav.interfaces.ICategorizable" />
-  	</class>
- -->
 </configure>

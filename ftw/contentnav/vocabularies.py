@@ -11,7 +11,7 @@ def contentcategories_vocabulary(context):
     normalizer = queryUtility(IIDNormalizer)
     catalog = getToolByName(context, 'portal_catalog')
     terms = []
-    for term in catalog.uniqueValuesFor("getContentCategories"):
+    for term in catalog.uniqueValuesFor("get_content_categories"):
         terms.append(
             SimpleTerm(
                 value=term.decode('utf8'),

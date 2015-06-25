@@ -1,1 +1,1 @@
-INDEXES = (('getContentCategories', 'KeywordIndex', ), )
+INDEXES = (('get_content_categories', 'KeywordIndex', ), )

@@ -42,7 +42,7 @@ def add_catalog_indexes(context):
 def remove_catalog_indexes(context):
     catalog = getToolByName(context, 'portal_catalog')
     indexes = catalog.indexes()
-
+    import pdb; pdb.set_trace()
     for name, meta_type in INDEXES:
 
         if name in indexes:

@@ -22,9 +22,9 @@ class TestPackageInstall(TestCase):
     def test_browserlayer_registered(self):
         self.assertIn(IFtwContentNavLayer, utils.registered_layers())
 
-    def test_index_getContentCategories_installed(self):
+    def test_index_get_content_categories_installed(self):
         catalog = getToolByName(self.portal, "portal_catalog")
-        self.assertIn('getContentCategories', catalog.indexes())
+        self.assertIn('get_content_categories', catalog.indexes())
 
 
 class TestPackageUninstall(TestCase):
@@ -48,6 +48,6 @@ class TestPackageUninstall(TestCase):
     def test_browserlayer_no_longer_registered(self):
         self.assertNotIn(IFtwContentNavLayer, utils.registered_layers())
 
-    # def test_index_getContentCategories_is_removed(self):
+    # def test_index_get_content_categories_is_removed(self):
     #     catalog = getToolByName(self.portal, "portal_catalog")
-    #     self.assertNotIn('getContentCategories', catalog.indexes())
+    #     self.assertNotIn('get_content_categories', catalog.indexes())
