@@ -73,7 +73,7 @@ class TestContentCategoriesBehavior(TestCase):
 
         browser.login().visit(content, view='@@edit')
 
-        selector = 'form-widgets-IContentCategories-' \
+        selector = '#form-widgets-IContentCategories-' \
                    'content_categories input[type=checkbox]'
 
         self.assertEqual(
