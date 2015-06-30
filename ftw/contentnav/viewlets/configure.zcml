@@ -4,7 +4,7 @@
     i18n_domain="ftw.contentnav">
 
     <browser:viewlet
-        for="*"
+        for="plone.dexterity.interfaces.IDexterityContainer"
         name="ftw.contentnav.contentnavlisting"
         manager="plone.app.layout.viewlets.interfaces.IBelowContent"
         class=".contentnavlisting.ContentNavListingViewlet"

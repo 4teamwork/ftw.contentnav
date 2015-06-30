@@ -36,7 +36,9 @@ class TestContentCategoriesBehavior(TestCase):
         create(Builder('sample')
                .having(content_categories=(u'WITH unicode \xe4', )))
 
-        unique_values = catalog.Indexes['get_content_categories'].uniqueValues()
+        unique_values = catalog.Indexes[
+            'get_content_categories'].uniqueValues()
+
         self.assertIn("WITH unicode \xc3\xa4", unique_values)
 
     @browsing
@@ -71,8 +73,8 @@ class TestContentCategoriesBehavior(TestCase):
 
         browser.login().visit(content, view='@@edit')
 
-        selector = \
-            '#form-widgets-IContentCategories-content_categories input[type=checkbox]'
+        selector = 'form-widgets-IContentCategories-' \
+                   'content_categories input[type=checkbox]'
 
         self.assertEqual(
             3,

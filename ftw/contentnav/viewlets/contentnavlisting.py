@@ -26,9 +26,7 @@ class ContentNavListingViewlet(ViewletBase):
 
     def _create_resultmap(self, contents=None):
         resultmap = {}
-        categories =[]
-        if not contents:
-            categories
+        categories = []
         for obj in contents:
             if IDexterityContent.providedBy(obj) and \
                     ICategorizable.providedBy(obj):
