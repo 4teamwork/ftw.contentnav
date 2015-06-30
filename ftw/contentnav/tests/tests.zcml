@@ -1,7 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="ftw.simplelayout">
+    i18n_domain="ftw.contentnav">
 
     <include package="Products.Five" file="meta.zcml" />
     <include package="Products.GenericSetup" file="meta.zcml" />
