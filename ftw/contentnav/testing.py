@@ -58,7 +58,7 @@ registry.builder_registry.register('sample', SampleBuilder)
 
 FTW_CONTENTNAV_FIXTURE = FtwContentnavLayer()
 FTW_CONTENTNAV_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(FTW_CONTENTNAV_FIXTURE,), name="FtwSimplelayout:Integration")
+    bases=(FTW_CONTENTNAV_FIXTURE,), name="FtwContentnav:Integration")
 FTW_CONTENTNAV_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FTW_CONTENTNAV_FIXTURE,
            set_builder_session_factory(functional_session_factory)),

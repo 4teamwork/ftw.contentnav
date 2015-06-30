@@ -19,7 +19,7 @@
 	<include package=".behaviors" />
     <include package=".viewlets" />
 
-	<include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
+    <include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
 
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
@@ -35,12 +35,12 @@
         handler=".hooks.installed"
         />
 
-	 <!-- indexer -->
+     <!-- indexer -->
     <adapter name="get_content_categories" factory=".indexer.categories" />
 
-	<utility
-	  component=".vocabularies.contentcategories_vocabulary"
-	  name="ftw.contentnav.contentcategories"
-	/>
+    <utility
+        component=".vocabularies.contentcategories_vocabulary"
+        name="ftw.contentnav.contentcategories"
+    />
 
 </configure>

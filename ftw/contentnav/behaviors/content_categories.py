@@ -43,18 +43,18 @@ class ContentCategoriesStorage(object):
 
     def __init__(self, context):
         self.context = context
-        self.annoation_storage = AnnotationsFactoryImpl(
+        self.annotation_storage = AnnotationsFactoryImpl(
             self.context,
             IContentCategories
         )
 
     @property
     def content_categories(self):
-        return self.annoation_storage.content_categories
+        return self.annotation_storage.content_categories
 
     @content_categories.setter
     def content_categories(self, value):
-        self.annoation_storage.content_categories = value
+        self.annotation_storage.content_categories = value
 
     @property
     def new_content_categories(self):
@@ -65,7 +65,7 @@ class ContentCategoriesStorage(object):
         if not value:
             return ()
         else:
-            categories = tuple(self.annoation_storage.content_categories)
-            self.annoation_storage.content_categories = tuple(set(
+            categories = tuple(self.annotation_storage.content_categories)
+            self.annotation_storage.content_categories = tuple(set(
                 categories + value
             ))
