@@ -20,3 +20,9 @@ class TestPackageInstall(TestCase):
     def test_index_get_content_categories_installed(self):
         catalog = getToolByName(self.portal, "portal_catalog")
         self.assertIn('get_content_categories', catalog.indexes())
+
+    def test_installed(self):
+        portal_setup = getToolByName(self.portal, 'portal_setup')
+        version = portal_setup.getLastVersionForProfile('ftw.contentnav:default')
+        self.assertNotEqual(version, None, 'Maybe the metadata.xml is missing.')
+        self.assertNotEqual(version, 'unknown', 'Maybe the metadata.xml is missing.')
