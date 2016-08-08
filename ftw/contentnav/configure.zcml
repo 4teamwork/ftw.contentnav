@@ -1,6 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:profilehook="http://namespaces.zope.org/profilehook"
     xmlns:i18n="http://namespaces.zope.org/i18n"
@@ -20,6 +20,8 @@
     <include package=".viewlets" />
 
     <include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
+
+    <include package="ftw.upgrade" file="meta.zcml" />
 
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
@@ -42,5 +44,10 @@
         component=".vocabularies.contentcategories_vocabulary"
         name="ftw.contentnav.contentcategories"
     />
+
+    <upgrade-step:directory
+        profile="ftw.contentnav:default"
+        directory="./upgrades"
+        />
 
 </configure>

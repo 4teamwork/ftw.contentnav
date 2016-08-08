@@ -26,7 +26,7 @@ class TestContentNavViewlet(TestCase):
 
     def _get_viewlet(self, obj):
         view = View(obj, obj.REQUEST)
-        manager_name = 'plone.belowcontent'
+        manager_name = 'plone.belowcontentbody'
         manager = queryMultiAdapter(
             (obj, obj.REQUEST, view),
             IViewletManager,
