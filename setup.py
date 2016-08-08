@@ -50,6 +50,7 @@ setup(name='ftw.contentnav',
       install_requires=[
           'setuptools',
           'ftw.profilehook',
+          'ftw.upgrade',
           'plone.behavior',
           'plone.dexterity',
           'plone.app.dexterity',
