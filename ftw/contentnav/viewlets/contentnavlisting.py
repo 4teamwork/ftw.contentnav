@@ -9,8 +9,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 class ContentNavListingViewlet(ViewletBase):
     """Lists content by categories"""
 
-    def render(self):
-        return ViewPageTemplateFile('contentnavlisting.pt')(self)
+    render = ViewPageTemplateFile('contentnavlisting.pt')
 
     def available(self):
         return bool(self.get_content())
