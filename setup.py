@@ -2,7 +2,6 @@ from setuptools import setup, find_packages
 import os
 
 version = '1.0a1'
-maintainer = 'Mathias Leimgruber'
 
 tests_require = [
     'ftw.builder',
@@ -38,7 +37,6 @@ setup(name='ftw.contentnav',
       keywords='ftw plone contentnav subcontent',
       author='4teamwork AG',
       author_email='mailto:info@4teamwork.ch',
-      maintainer=maintainer,
       url='https://github.com/4teamwork/ftw.contentnav',
       license='GPL2',
 
