@@ -12,7 +12,7 @@
     <i18n:registerTranslations directory="locales" />
 
     <include file="permissions.zcml" />
-	<include package=".behaviors" />
+    <include package=".behaviors" />
     <include package=".viewlets" />
 
     <include zcml:condition="installed ftw.lawgiver" file="lawgiver.zcml" />
@@ -33,13 +33,13 @@
         handler=".hooks.installed"
         />
 
-     <!-- indexer -->
+    <!-- indexer -->
     <adapter name="get_content_categories" factory=".indexer.categories" />
 
     <utility
         component=".vocabularies.contentcategories_vocabulary"
         name="ftw.contentnav.contentcategories"
-    />
+        />
 
     <upgrade-step:directory
         profile="ftw.contentnav:default"
