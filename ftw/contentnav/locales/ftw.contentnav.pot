@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-24 13:31+0000\n"
+"POT-Creation-Date: 2016-09-26 16:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,8 +14,24 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
 
+#: ./ftw/contentnav/behaviors/configure.zcml:18
+msgid "Extends a content by the category field to show           it in the contentnavigation"
+msgstr ""
+
+#: ./ftw/contentnav/configure.zcml:33
+msgid "Installs contentnav"
+msgstr ""
+
 #: ./ftw/contentnav/behaviors/content_categories.py:20
 msgid "categories"
+msgstr ""
+
+#: ./ftw/contentnav/configure.zcml:33
+msgid "ftw.contentnav"
+msgstr ""
+
+#: ./ftw/contentnav/behaviors/configure.zcml:18
+msgid "ftw.contentnav categorisation behavior"
 msgstr ""
 
 #. Default: "Category for contentlisting"
@@ -37,5 +53,4 @@ msgstr ""
 #: ./ftw/contentnav/behaviors/content_categories.py:30
 msgid "label_new_categories"
 msgstr ""
-
 
