@@ -7,10 +7,6 @@
     xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="ftw.contentnav">
 
-    <!-- include package dependencies -->
-    <include package="z3c.autoinclude" file="meta.zcml" />
-    <includeDependencies package="." />
-
     <include package="ftw.profilehook" />
 
     <i18n:registerTranslations directory="locales" />
