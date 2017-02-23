@@ -1,18 +1,16 @@
 from ftw.builder import Builder
 from ftw.builder import create
-from ftw.contentnav.testing import FTW_CONTENTNAV_FUNCTIONAL_TESTING
+from ftw.contentnav.tests import FunctionalTestCase
 from ftw.testbrowser import browsing
+from plone import api
 from plone.dexterity.fti import DexterityFTI
 from Products.CMFCore.utils import getToolByName
-from unittest2 import TestCase
 
 
-class TestContentCategoriesBehavior(TestCase):
-
-    layer = FTW_CONTENTNAV_FUNCTIONAL_TESTING
+class TestContentCategoriesBehavior(FunctionalTestCase):
 
     def setUp(self):
-        self.portal = self.layer['portal']
+        super(TestContentCategoriesBehavior, self).setUp()
         # add sample fti
         self.fti = DexterityFTI('Sample')
         self.fti.schema = \
@@ -80,3 +78,18 @@ class TestContentCategoriesBehavior(TestCase):
             3,
             len(browser.css(selector)),
             'Some categories are missing in the edit-form')
+
+    @browsing
+    def test_widget_strips_duplicate_categories(self, browser):
+        self.grant('Manager')
+        content = create(Builder('sample'))
+        browser.login()
+        browser.visit(content, view='@@edit')
+        browser.forms['form'].fill({u'New categories': u'Test\n   Test\nTest   \n  Test '}).submit()
+
+        catalog_tool = api.portal.get_tool('portal_catalog')
+        unique_values = catalog_tool.Indexes['get_content_categories'].uniqueValues()
+        self.assertEqual(
+            ('Test',),
+            unique_values
+        )
