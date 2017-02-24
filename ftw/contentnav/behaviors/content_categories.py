@@ -66,6 +66,9 @@ class ContentCategoriesStorage(object):
             return ()
         else:
             categories = tuple(self.annotation_storage.content_categories)
-            self.annotation_storage.content_categories = tuple(set(
-                categories + value
-            ))
+            new_categories = tuple([new_category.strip() for new_category in value])
+
+            # Merge new categories with existing categories (duplicates being removed).
+            self.annotation_storage.content_categories = tuple(
+                set(categories + new_categories)
+            )
