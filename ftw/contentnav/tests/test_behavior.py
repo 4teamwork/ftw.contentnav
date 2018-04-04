@@ -91,5 +91,5 @@ class TestContentCategoriesBehavior(FunctionalTestCase):
         unique_values = catalog_tool.Indexes['get_content_categories'].uniqueValues()
         self.assertEqual(
             ('Test',),
-            unique_values
+            tuple(unique_values)
         )
