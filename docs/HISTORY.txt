@@ -6,6 +6,7 @@ Changelog
 ------------------
 
 - Add support for Plone 5.1.x. [mbaechtold]
+- Add Plone 5.1.x note to README.md. [busykoala]
 
 
 1.0.2 (2017-02-28)

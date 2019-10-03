@@ -15,7 +15,7 @@ Provides a content navigation behavior, which allows you to show sub content by 
 Compatibility
 -------------
 
-Plone 4.3.x
+Plone 4.3.x and 5.1.x support
 
 
 Installation
