@@ -3,7 +3,7 @@ from ftw.builder import create
 from ftw.contentnav.testing import FTW_CONTENTNAV_FUNCTIONAL_TESTING
 from plone.dexterity.fti import DexterityFTI
 from Products.Five.browser import BrowserView as View
-from unittest2 import TestCase
+from unittest import TestCase
 from zope.component import queryMultiAdapter
 from zope.viewlet.interfaces import IViewletManager
 
