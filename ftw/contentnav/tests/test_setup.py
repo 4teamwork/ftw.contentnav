@@ -1,6 +1,6 @@
 from ftw.contentnav.testing import FTW_CONTENTNAV_INTEGRATION_TESTING
 from Products.CMFCore.utils import getToolByName
-from unittest2 import TestCase
+from unittest import TestCase
 
 
 class TestPackageInstall(TestCase):
